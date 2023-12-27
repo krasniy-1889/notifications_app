@@ -39,10 +39,10 @@ class Message(models.Model):
 
     class STATUS_CHOICES(models.TextChoices):
         SEND = "S", "send"
-        NOT_SEND = "S", "not send"
+        NOT_SEND = "NS", "not send"
 
     send_time = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES.choices)
+    status = models.CharField(max_length=2, choices=STATUS_CHOICES.choices)
     mailing = models.ForeignKey(
         Mailing, on_delete=models.CASCADE, related_name="messages"
     )

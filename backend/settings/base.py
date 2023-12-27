@@ -6,7 +6,7 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-SECRET_KEY = "django-insecure-)u(b@55px(0jlrv&!v%*y89sbeh1jbz%+@kj(lq*k56xm0j+k0"
+SECRET_KEY = "django-insecure-1tsw84_lc69@pk3-6=z!ocr9e#scykphb^+8q)v9ylp4k810up"
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -15,10 +15,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "celery",
     "rest_framework",
     "django_filters",
     "django_extensions",
-    # "apps.post",
+    "apps.user",
+    "apps.mailing",
+    "apps.api",
 ]
 
 MIDDLEWARE = [
@@ -31,7 +34,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "notification_app.urls"
+ROOT_URLCONF = "backend.urls"
 
 TEMPLATES = [
     {
@@ -49,7 +52,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "notification_app.wsgi.application"
+WSGI_APPLICATION = "backend.wsgi.application"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
